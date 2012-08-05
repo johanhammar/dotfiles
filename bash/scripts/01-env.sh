@@ -20,3 +20,7 @@ export CLOJURE_HOME=/usr/local/Cellar/clojure/1.3.0
 export CLASSPATH=$CLASSPATH:$CLOJURE_HOME/clojure-1.3.0.jar:
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+# update bash history after each command
+PROMPT_COMMAND="history -a"
+
