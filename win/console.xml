@@ -127,5 +127,14 @@
 				</image>
 			</background>
 		</tab>
+		<tab title="Git Bash" icon="C:\Program Files (x86)\Git\etc\git.ico" use_default_icon="0">
+			<console shell="C:\Windows\SysWOW64\cmd.exe /c &quot;&quot;C:\Program Files (x86)\Git\bin\sh.exe&quot; --login -i&quot;" init_dir="c:\tmp" run_as_user="0" user=""/>
+			<cursor style="0" r="255" g="255" b="255"/>
+			<background type="0" r="0" g="0" b="0">
+				<image file="" relative="0" extend="0" position="0">
+					<tint opacity="0" r="0" g="0" b="0"/>
+				</image>
+			</background>
+		</tab>
 	</tabs>
 </settings>
