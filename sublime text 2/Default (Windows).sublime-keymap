@@ -1,0 +1,10 @@
+[
+    { "keys": ["ctrl+shift+x"], "command": "xml_prettify" },
+
+    { "keys": ["ctrl+tab"], "command": "next_view" },
+    { "keys": ["ctrl+shift+tab"], "command": "prev_view"},
+
+    { "keys": ["ctrl+v"], "command": "paste_and_indent" },
+    { "keys": ["ctrl+shift+v"], "command": "paste" }
+
+]

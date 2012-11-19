@@ -1,19 +1,48 @@
 {
-    "color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"color_scheme": "Packages/TomorrowTheme/Tomorrow-Night.tmTheme",
 
-    "font_options":
-    [
-        "subpixel_antialias"
-    ],
-    "font_face": "Ubuntu Mono",
-    "font_size": 12,
+	"bold_folder_labels": true,
 
-    "translate_tabs_to_spaces": true,
-    "trim_trailing_white_space_on_save": true,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"_build",
+		"dist",
+		"build",
+		"site"
+	],
 
-    "draw_white_space": "all",
-    "highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage",
+		"AppleScript"
+	],
 
-    "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "_build", "dist", "build", "site"]
+	"font_face": "Source Code Pro",
+	"font_options":
+	[
+		"subpixel_antialias",
+		"no_round"
+	],
+	"font_size": 11,
+
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"ensure_newline_at_eof_on_save": true,
+
+	"margin": 0,
+	"scroll_past_end": true,
+
+	"shift_tab_unindent": true,
+
+	"draw_white_space": "all",
+	"rulers": [120],
+	"indent_guide_options": ["draw_active"]
 
 }
