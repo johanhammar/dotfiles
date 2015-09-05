@@ -1,0 +1,36 @@
+
+execute pathogen#infect()
+
+set nocompatible " explicitly get out of vi-compatible mode
+
+syntax on
+
+filetype plugin indent on
+
+colorscheme Tomorrow-Night 
+
+" using Source Code Pro
+set anti enc=utf-8
+set guifont=Source_Code_Pro:h13
+
+set laststatus=2 " always show the status line
+set backspace=indent,eol,start " make backspace a more flexible
+set wildmenu " turn on command line completion wild style
+set ruler
+
+set ignorecase
+set smartcase
+set hlsearch
+
+set nobackup
+set nowb
+set noswapfile
+
+set expandtab
+set smarttab
+
+set shiftwidth=4
+set tabstop=4
+
+let mapleader = ","
+

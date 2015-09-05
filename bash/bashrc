@@ -1,9 +1,0 @@
-#!/bin/bash
-
-if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
-fi
-
-for file in `ls ~/Development/dotfiles/bash/scripts/*.sh`; do
-    . ${file}
-done
