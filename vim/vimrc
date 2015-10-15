@@ -1,36 +1,60 @@
 
 execute pathogen#infect()
 
+colorscheme Tomorrow-Night 
+
 set nocompatible " explicitly get out of vi-compatible mode
 
+let mapleader = ","
+
 syntax on
-
 filetype plugin indent on
-
-colorscheme Tomorrow-Night 
 
 " using Source Code Pro
 set anti enc=utf-8
 set guifont=Source_Code_Pro:h13
 
+set number
+set cursorline
+
+set showcmd
 set laststatus=2 " always show the status line
 set backspace=indent,eol,start " make backspace a more flexible
 set wildmenu " turn on command line completion wild style
 set ruler
 
+set showmatch
+
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+
+set expandtab " tabs as spaces
+set smarttab
+
 set ignorecase
 set smartcase
+set incsearch
 set hlsearch
+
+set visualbell 
+set t_vb=
 
 set nobackup
 set nowb
 set noswapfile
 
-set expandtab
-set smarttab
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
 
-set shiftwidth=4
-set tabstop=4
+nnoremap <leader>. :CtrlPTag<cr>
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
-let mapleader = ","
+" Pebble dev related
+let g:rootmarkers = ['wscript', '.git']
+
+nnoremap <leader>pc :ProjectRootExe !pebble clean<CR>
+nnoremap <leader>pb :ProjectRootExe !pebble build<CR>
+nnoremap <leader>pi :ProjectRootExe !pebble install --emulator basalt<CR>
+
 
