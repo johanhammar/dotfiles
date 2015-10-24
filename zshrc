@@ -56,7 +56,7 @@ plugins=(brew docker gvm rbenv jruby ruby gem git mvn npm osx)
 # Exports
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/.bin:~/.rbenv/bin"
 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home"
 
 source $ZSH/oh-my-zsh.sh
 
