@@ -49,16 +49,17 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew docker gvm rbenv jruby ruby gem git mvn npm osx)
+plugins=(brew docker gvm rbenv jruby ruby gem git mvn npm osx pebble)
 
 # User configuration
 
 # Exports
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/.bin:~/.rbenv/bin"
-
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/.bin:~/.rbenv/bin:~/.jenv/bin"
 
 source $ZSH/oh-my-zsh.sh
+
+# Initialize jenv
+eval "$(jenv init -)"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -90,8 +91,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 # rbenv
 eval "$(rbenv init -)"
 
-# gvm
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-export GVM_DIR="/Users/johanhammar/.gvm"
-[[ -s "/Users/johanhammar/.gvm/bin/gvm-init.sh" ]] && source "/Users/johanhammar/.gvm/bin/gvm-init.sh"
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/johanhammar/.sdkman"
+[[ -s "/Users/johanhammar/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/johanhammar/.sdkman/bin/sdkman-init.sh"
 
