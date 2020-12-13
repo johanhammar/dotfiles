@@ -1,41 +1,54 @@
-
-execute pathogen#infect()
-
-colorscheme Tomorrow-Night 
-
 set nocompatible " explicitly get out of vi-compatible mode
+filetype off
+
+" Vundle.vim: https://github.com/VundleVim/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'ctrlpvim/ctrlp.vim'
+
+call vundle#end()
+
+colorscheme night_owl_light 
+set termguicolors
 
 let mapleader = ","
 
 syntax on
 filetype plugin indent on
 
-" using Source Code Pro
+" Use Source Code Pro
 set anti enc=utf-8
 set guifont=Source_Code_Pro:h13
 
 set number
 set cursorline
+set scrolloff=3
 
+" Always show the status line
 set showcmd
-set laststatus=2 " always show the status line
-set backspace=indent,eol,start " make backspace a more flexible
-set wildmenu " turn on command line completion wild style
-set ruler
+set laststatus=2 
 
-set showmatch
+" Make backspace a more flexible
+set backspace=indent,eol,start 
+
+" Turn on command line completion wild style
+set wildmenu 
+set ruler
 
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 
-set expandtab " tabs as spaces
+" Tabs as spaces
+set expandtab 
 set smarttab
 
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
+set showmatch
 
 set visualbell 
 set t_vb=
@@ -44,20 +57,12 @@ set nobackup
 set nowb
 set noswapfile
 
+" Disable Ex mode
+nnoremap Q <Nop>
+
 map <leader>e :Explore<cr> 
 let g:netrw_liststyle=3
 
-" turn off search highlight
+" Turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
-
-nnoremap <leader>. :CtrlPTag<cr>
-nnoremap <silent> <Leader>b :TagbarToggle<CR>
-
-" Pebble dev related
-let g:rootmarkers = ['wscript', '.git']
-
-nnoremap <leader>pc :ProjectRootExe !pebble clean<CR>
-nnoremap <leader>pb :ProjectRootExe !pebble build<CR>
-nnoremap <leader>pi :ProjectRootExe !pebble install --emulator basalt<CR>
-
 

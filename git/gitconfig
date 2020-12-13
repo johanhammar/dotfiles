@@ -1,47 +1,20 @@
 [user]
-	name = Johan Hammar
 	email = johan.hammar@gmail.com
-
-[core]
-	excludesfile = ~/.gitignore
-	editor = subl -w
+	name = Johan Hammar
 
 [alias]
-	co = checkout
-	st = status
 	ci = commit
-	br = branch
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-
-[receive]
-	denycurrentbranch = ignore
+	co = checkout
+    s = status --short --branch
+    st = status
+    alias = config --get-regexp 'alias.*'
+    pp = log --graph --abbrev-commit --decorate --date=relative --all
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    today=log --color --graph --pretty=format:'%Cgreen[%Creset%h%Cgreen]%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --since=yesterday
 
 [push]
 	default = tracking
 
-[diff]
-	tool = diffmerge
-
-[difftool "diffmerge"]
-	cmd = diffmerge --title1=Old --title2=New $LOCAL $REMOTE
-	prompt = false
-
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-
-[merge]
-	tool = diffmerge
-
-[mergetool "diffmerge"]
-	cmd = diffmerge --merge --result?$MERGED --title1=Mine --title2=Merged --title3=Theirs $LOCAL $BASE $REMOTE
-	trustExitCode = true
-	keepBackup = false
-	prompt = false
-
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-
 [help]
 	autocorrect = 1
+
