@@ -1,4 +1,4 @@
-" Vim
+" Neovim
 "
 " Inspiration
 "  - https://github.com/peterhellberg/dotfiles/blob/master/.vimrc
@@ -9,7 +9,7 @@
 set nocompatible " explicitly get out of vi-compatible mode
 filetype off
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 " Language plugins
 Plug 'fatih/vim-go'
@@ -59,7 +59,7 @@ let mapleader = ","
 syntax on
 filetype plugin indent on
 
-set anti enc=utf-8
+"set anti enc=utf-8
 set guifont=Office_Code_Pro_D:h13
 
 set number
@@ -74,7 +74,7 @@ set laststatus=2
 set backspace=indent,eol,start
 
 " Turn on command line completion wild style
-set wildmenu 
+set wildmenu
 set ruler
 
 set shiftwidth=4
@@ -191,6 +191,7 @@ autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellesca
 " NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
 "let NERDTreeIgnore = ['tmp', 'reports', 'Godeps', '_workspace', 'gin-bin', 'deps', 'vendor', node_modules]
 
 let NERDTreeDirArrowExpandable = '→'
