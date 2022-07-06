@@ -11,7 +11,14 @@ filetype off
 
 call plug#begin()
 
-" Language plugins
+" General
+Plug 'tpope/vim-sensible' " Sensible Vim defaults - See https://github.com/tpope/vim-sensible
+
+" Development
+Plug 'ap/vim-css-color' " CSS Color Preview
+Plug 'preservim/tagbar' " Tagbar for code navigation
+"Plug 'neoclide/coc.nvim'
+Plug 'dense-analysis/ale'
 Plug 'fatih/vim-go'
 Plug 'elixir-editors/vim-elixir'
 Plug 'rust-lang/rust.vim'
@@ -19,31 +26,26 @@ Plug 'racer-rust/vim-racer'
 Plug 'ziglang/zig.vim'
 Plug 'nvie/vim-flake8'
 Plug 'vim-scripts/indentpython.vim'
-
-
-Plug 'tpope/vim-sensible'
-
-Plug 'ctrlpvim/ctrlp.vim'
-"Plug 'neoclide/coc.nvim'
-Plug 'scrooloose/nerdtree'
-Plug 'dense-analysis/ale'
-
 Plug 'davidhalter/jedi-vim'
+Plug 'ekalinin/Dockerfile.vim'
+" Plug 'ThePrimeagen/refactoring.nvim'
 
+" Utility
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tc50cal/vim-terminal' " Vim Terminal
+Plug 'terryma/vim-multiple-cursors'
 
-Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
-Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
-Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
-Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
-Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
-Plug 'https://github.com/terryma/vim-multiple-cursors'
+" File management
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
 
 " Git
-Plug 'pope/vim-fugitive'
+" Plug 'pope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" Colorschemes and icons
+" Themeing
 
 Plug 'haishanh/night-owl.vim'
 Plug 'rafi/awesome-vim-colorschemes'
@@ -60,7 +62,7 @@ syntax on
 filetype plugin indent on
 
 "set anti enc=utf-8
-set guifont=Office_Code_Pro_D:h13
+set guifont=Source_Code_Pro:h13
 
 set number
 set cursorline
@@ -189,10 +191,20 @@ autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%,
 autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 " NERDTree
-nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>t :NERDTreeToggle<CR>
+nmap <leader>n :call NERDTreeToggleInCurDir()<CR>
 nnoremap <leader>f :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
 "let NERDTreeIgnore = ['tmp', 'reports', 'Godeps', '_workspace', 'gin-bin', 'deps', 'vendor', node_modules]
+
+" Open NERDTree in the directory of the current file (or /home if no file is open)
+function! NERDTreeToggleInCurDir()
+  " If NERDTree is open in the current buffer
+  if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+    exe ":NERDTreeClose"
+  else
+    exe ":NERDTreeFind"
+  endif
+endfunction
 
 let NERDTreeDirArrowExpandable = '→'
 let NERDTreeDirArrowCollapsible = '↓'
@@ -219,7 +231,7 @@ let g:ale_linters = {
       \   'javascript': ['eslint'],
       \}
 
-" air-line
+" Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -233,7 +245,21 @@ let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.colnr = ' ㏇:'
 let g:airline_symbols.branch = ''
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
+let g:airline_symbols.whitespace = 'Ξ'
 
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ''
