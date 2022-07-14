@@ -36,6 +36,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tc50cal/vim-terminal' " Vim Terminal
 Plug 'terryma/vim-multiple-cursors'
+Plug 'mileszs/ack.vim'
 
 " File management
 Plug 'ctrlpvim/ctrlp.vim'
@@ -230,6 +231,10 @@ let g:ale_linters = {
       \   'ruby': ['standardrb', 'rubocop'],
       \   'javascript': ['eslint'],
       \}
+
+" Ack
+nmap <leader>a :Ack! 
+set shellpipe=&>
 
 " Airline
 let g:airline_powerline_fonts = 1
