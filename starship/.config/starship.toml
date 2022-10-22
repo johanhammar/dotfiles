@@ -1,0 +1,29 @@
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style)@"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style):"
+#trim_at = "-"
+#style = "bold dimmed green"
+style = "bold green"
+disabled = false
+
+[custom.ansible]
+description = "Ansible version"
+command = "ansible --version | grep ^ansible | tr -d [] | cut -c 14-" 
+#when = """ test -n "${ANSIBLE_HOME}" """
+#files = [ "ansible.cfg" ]
+directories = [ "group_vars", "inventories" ]
+shell = "/bin/bash"
+symbol = "Ⓐ "
+format = "[$symbol$output]($style) "
