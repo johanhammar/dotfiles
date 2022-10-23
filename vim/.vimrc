@@ -51,10 +51,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'haishanh/night-owl.vim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'ryanoasis/vim-devicons'
+Plug 'macguirerintoul/night_owl_light.vim'
 
 call plug#end()
 
-colorscheme jellybeans
+colorscheme night_owl_light
 set termguicolors
 
 let mapleader = ","
