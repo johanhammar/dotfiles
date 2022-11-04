@@ -134,7 +134,9 @@ set splitbelow
 set splitright
 
 " List buffers
-nmap <leader>b         :buffers<cr>
+"nmap <leader>b         :buffers<cr>
+nmap <leader>b :buffers<CR>:b<Space>
+"nmap <leader>bl :ls<CR>
 
 " Open new buffers
 nmap <leader>s<left>   :leftabove  vnew<cr>
