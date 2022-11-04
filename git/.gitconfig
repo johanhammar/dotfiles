@@ -13,7 +13,7 @@
     today=log --color --graph --pretty=format:'%Cgreen[%Creset%h%Cgreen]%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --since=yesterday
 
 [push]
-	default = tracking
+	default = current
 
 [help]
 	autocorrect = 1
