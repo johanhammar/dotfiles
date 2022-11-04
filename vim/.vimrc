@@ -52,10 +52,13 @@ Plug 'haishanh/night-owl.vim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'macguirerintoul/night_owl_light.vim'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
-colorscheme night_owl_light
+colorscheme gruvbox
+set background=dark    " Setting dark mode
+
 set termguicolors
 
 let mapleader = ","
