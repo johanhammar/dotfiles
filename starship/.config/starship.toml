@@ -79,3 +79,12 @@ echo "$GIT_REMOTE_SYMBOL "
 """
 when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
 format = "$output  "
+
+[custom.sudo]
+
+description = "valid sudo timestamp marker"
+command = "echo -n '!'"
+format = "[$symbol$output]($style) "
+style = "bold fg:bright-red"
+when = "sudo -n true"
+
