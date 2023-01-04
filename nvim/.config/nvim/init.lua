@@ -96,7 +96,7 @@ if is_bootstrap then
     print '       then restart nvim'
     print '=================================='
     
-    -- Don't source any of the plugins in 'after'
+    -- Don't source any of the plugins in 'after' while bootstrapping
     vim.opt.runtimepath:remove(os.getenv("HOME") .. "/.config/nvim/after")
     return
 else
