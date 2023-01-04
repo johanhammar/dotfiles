@@ -80,6 +80,9 @@ require('packer').startup(function(use)
         }
     }
 
+    -- Learn vim
+    use('ThePrimeagen/vim-be-good')
+
     if is_bootstrap then
         require('packer').sync()
     end

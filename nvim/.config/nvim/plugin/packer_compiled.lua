@@ -195,6 +195,11 @@ _G.packer_plugins = {
     path = "/home/johan/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-be-good"] = {
+    loaded = true,
+    path = "/home/johan/.local/share/nvim/site/pack/packer/start/vim-be-good",
+    url = "https://github.com/ThePrimeagen/vim-be-good"
+  },
   ["vim-css-color"] = {
     loaded = true,
     path = "/home/johan/.local/share/nvim/site/pack/packer/start/vim-css-color",
