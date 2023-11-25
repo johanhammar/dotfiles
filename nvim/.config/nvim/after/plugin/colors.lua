@@ -1,4 +1,4 @@
-function ColorMyPencils(color)
+function ApplyColorScheme(color)
 	color = color or "gruvbox"
 	vim.cmd.colorscheme(color)
 
@@ -7,4 +7,4 @@ function ColorMyPencils(color)
 
 end
 
-ColorMyPencils()
+ApplyColorScheme()

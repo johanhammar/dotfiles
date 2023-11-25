@@ -1,15 +1,24 @@
-local lsp = require("lsp-zero")
+lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-  'tsserver',
-  'eslint',
-  'rust_analyzer',
+--lsp.ensure_installed({
+--  'tsserver',
+--  'eslint',
+--  'rust_analyzer',
+--})
+
+require('mason').setup({})
+
+require('mason-lspconfig').setup({
+    ensure_installed = {'tsserver', 'eslint', 'rust_analyzer'},
+    handlers = {
+        lsp.default_setup,
+    },
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
@@ -31,12 +40,12 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 
 -- disable completion with tab
 -- this helps with copilot setup
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
+--cmp_mappings['<Tab>'] = nil
+--cmp_mappings['<S-Tab>'] = nil
 
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
-})
+--lsp.setup_nvim_cmp({
+--  mapping = cmp_mappings
+--})
 
 lsp.set_preferences({
     suggest_lsp_servers = false,
