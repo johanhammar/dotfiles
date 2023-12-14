@@ -25,12 +25,9 @@ require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use({
-        'morhetz/gruvbox',
-        as = 'gruvbox',
-        config = function()
-            vim.cmd('colorscheme gruvbox')
-        end
+    use({ "ellisonleao/gruvbox.nvim", as = 'gruvbox', config = function()
+        vim.cmd('colorscheme gruvbox')
+    end
     })
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -95,7 +92,7 @@ if is_bootstrap then
     print '    Wait until Packer completes,'
     print '       then restart nvim'
     print '=================================='
-    
+
     -- Don't source any of the plugins in 'after' while bootstrapping
     vim.opt.runtimepath:remove(os.getenv("HOME") .. "/.config/nvim/after")
     return
