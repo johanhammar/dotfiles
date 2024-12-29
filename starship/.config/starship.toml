@@ -88,3 +88,11 @@ format = "[$symbol$output]($style) "
 style = "bold fg:bright-red"
 when = "sudo -n true"
 
+[custom.mpris]
+command = "playerctl metadata --all-players --format \"{{ trunc(artist,12) }} - {{ trunc(title,12) }}\""
+when = "playerctl status"
+description = "Shows current MPRIS song and artist"
+symbol = "♫ "
+style = "#fa354f"
+format = "[$symbol($output )]($style)"
+os = "linux"
